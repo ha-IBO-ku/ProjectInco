@@ -34,24 +34,36 @@ public class PlayerShipPrefab : MonoBehaviour
         
         thrusters[0] = GameObject.CreatePrimitive(PrimitiveType.Cube);
         thrusterRigidbodies[0] = thrusters[0].AddComponent<Rigidbody>();
-        thrusters[0].name = "thruster1";
+        thrusters[0].name = "thruster0";
         thrusters[0].transform.localScale = thrusterScale;
         //ここまで
 
 
         //推進装置の位置、回転を書く
-        Vector3 vec3 = new Vector3(1, 1, 1);
-        vec3.Normalize();
-        vec3 = vec3 * (1 + thrusterScale.y / 2);
-        thrusters[0].transform.position = vec3;
-        thrusters[0].transform.rotation = Quaternion.Euler(45, 45, 45);
-        thrustFJs[0] = thrusters[0].AddComponent<FixedJoint>();
-        thrustFJs[0].connectedBody = bodyRigidBody;
+        //Vector3 vec3 = new Vector3(0, 1, 1);
+        //vec3.Normalize();
+        //vec3 = vec3 * ((1 + thrusterScale.y) / 2);
+        //thrusters[0].transform.position = vec3;
+        //thrusters[0].transform.rotation = Quaternion.Euler(45,0, 0);
+        //thrustFJs[0] = thrusters[0].AddComponent<FixedJoint>();
+        //thrustFJs[0].connectedBody = bodyRigidBody;
 
         //Debug.Log(vec3.ToString());
-        
-    }
 
+        thrustFJs[0] = ThrusterLocate(thrusters[0], new vector3(0, 1, 1), 45, 0, 0);
+
+
+    }
+    private FixedJoint ThrusterLocate(GameObject go, Vector3 vec3, float a, float b, float c)
+    {
+        vec3.Normalize();
+        vec3 = vec3 * ((1 + thrusterScale.y) / 2);
+        go.transform.position = vec3;
+        go.transform.rotation = Quaterion.Euler(a, b, c);
+        FixedJoint rtnObj = go.AddComponent<FixedJont>();
+        rtnObj.connectedBody = bodyRigitBody;
+        return rtnObj;
+    }
     // Update is called once per frame
     void Update()
     {
