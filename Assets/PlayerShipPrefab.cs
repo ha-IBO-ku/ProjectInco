@@ -15,25 +15,25 @@ public class PlayerShipPrefab : MonoBehaviour
     Vector3 thrusterScale = new Vector3(0.1f, 0.1f, 0.3f);
     Vector3[] thDirVec = new Vector3[8]
         {
-        (0f,1f,1f),
-        (1f,0f,1f),
-        (0f,-1f,1f),
-        (-1f,0f,1f),
-        (0f,1f,-1f),
-        (1f,0f,-1f),
-        (0f,-1f,-1f),
-        (-1f,0f,-1f)
+        new Vector3(0f,1f,1f),
+        new Vector3(1f,0f,1f),
+        new Vector3(0f,-1f,1f),
+        new Vector3(-1f,0f,1f),
+        new Vector3(0f,1f,-1f),
+        new Vector3(1f,0f,-1f),
+        new Vector3(0f,-1f,-1f),
+        new Vector3(-1f,0f,-1f)
         };
     ThrustRotation[] thRot = new ThrustRotation[8]
         {
-        (45f,0f,0f),
-        (0f,45f,0f),
-        (-45f,0f,0f),
-        (0f,-45f,0f),
-        (-45f,0f,0f),
-        (0f,-45f,0f),
-        (45f,0f,0f),
-        (0f,45f,0f)
+        new ThrustRotation(45f,0f,0f),
+        new ThrustRotation(0f,-45f,0f),
+        new ThrustRotation(-45f,0f,0f),
+        new ThrustRotation(0f,45f,0f),
+        new ThrustRotation(-45f,0f,0f),
+        new ThrustRotation(0f,45f,0f),
+        new ThrustRotation(45f,0f,0f),
+        new ThrustRotation(0f,-45f,0f)
         };
 
     
@@ -80,34 +80,11 @@ public class PlayerShipPrefab : MonoBehaviour
             thrusters[i].transform.localScale = thrusterScale;
             thrustFJs[i] = ThrusterLocate(thrusters[i], thDirVec[i], thRot[i]);
         }
-
-        //テストコード↓
-        
-        
-        //thrusters[0] = GameObject.CreatePrimitive(PrimitiveType.Cube);
-        //thrustRBs[0] = thrusters[0].AddComponent<Rigidbody>();
-        //thrusters[0].name = "thruster0";
-        //thrusters[0].transform.localScale = thrusterScale;
-        //ここまで
+        //テストコード
+        //thrustRBs[0].AddRelativeForce(Vector3.forward * 200);
+        thrustRBs[4].AddRelativeForce(Vector3.back * 200);
 
 
-        //推進装置の位置、回転を書く
-        //Vector3 vec3 = new Vector3(0, 1, 1);
-        //vec3.Normalize();
-        //vec3 = vec3 * ((1 + thrusterScale.y) / 2);
-        //thrusters[0].transform.position = vec3;
-        //thrusters[0].transform.rotation = Quaternion.Euler(45,0, 0);
-        //thrustFJs[0] = thrusters[0].AddComponent<FixedJoint>();
-        //thrustFJs[0].connectedBody = bodyRB;
-
-        //Debug.Log(vec3.ToString());
-
-        //thrustFJs[0] = ThrusterLocate(thrusters[0], new Vector3(0, 1, 1), 45, 0, 0);
-        //thrustFJs[1] = ThrusterLocate(thrusters[1], new Vector3(1, 0, 1), 0, 45, 0);
-        //for (int i = 0; i < thrustFJs.Length; i++)
-        //{
-        //    thrustFJs[i] = ThrusterLocate(thrusters[i], thDirVec[i], thRot[i]);
-        //}
 
     }
     
@@ -122,7 +99,11 @@ public class PlayerShipPrefab : MonoBehaviour
         return rtnObj;
     }
     // Update is called once per frame
-    void Update()
+    //void Update()
+    //{
+    //
+    //}
+    void FixedUpdate()
     {
 
     }
