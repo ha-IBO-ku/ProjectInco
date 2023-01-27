@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerShipPrefab : MonoBehaviour
 {
@@ -53,6 +54,38 @@ public class PlayerShipPrefab : MonoBehaviour
             Z = z;
         }
     }
+
+
+
+
+
+
+    public void OnFire(InputAction.CallbackContext context)
+    {
+        Debug.Log("Fire");
+    }
+
+    public void OnForward4(InputAction.CallbackContext context)
+    {
+        Debug.Log("Forward4");
+    }
+
+    public void OnBack4(InputAction.CallbackContext context)
+    {
+        Debug.Log("Back4");
+    }
+
+    public void OnForwardThruster(InputAction.CallbackContext context)
+    {
+        Debug.Log("ForThrust");
+    }
+
+    public void OnBackThruster(InputAction.CallbackContext context)
+    {
+        Debug.Log("BackThrust");
+    }
+
+
 
 
 
