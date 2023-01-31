@@ -7,7 +7,7 @@
             "actions": [
                 {
                     "name": "BackThruster",
-                    "type": "Value",
+                    "type": "PassThrough",
                     "id": "a8b1d279-5340-461a-9911-e21eaaf3ed2d",
                     "expectedControlType": "Vector2",
                     "processors": "",
@@ -16,7 +16,7 @@
                 },
                 {
                     "name": "ForwardThruster",
-                    "type": "Value",
+                    "type": "PassThrough",
                     "id": "dd067850-fc80-4d49-8046-17f7a9a49384",
                     "expectedControlType": "Vector2",
                     "processors": "",
@@ -25,7 +25,7 @@
                 },
                 {
                     "name": "Forward4",
-                    "type": "Value",
+                    "type": "PassThrough",
                     "id": "3e394a7b-210c-4cbb-9e7e-828cdbc4c194",
                     "expectedControlType": "Axis",
                     "processors": "",
@@ -34,7 +34,7 @@
                 },
                 {
                     "name": "Back4",
-                    "type": "Value",
+                    "type": "PassThrough",
                     "id": "484e23d9-9a8b-469e-87de-0a25c348205c",
                     "expectedControlType": "Axis",
                     "processors": "",
