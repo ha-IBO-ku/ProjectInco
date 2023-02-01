@@ -41,6 +41,7 @@ public class PlayerShipPrefab : MonoBehaviour
     Vector2 fwdTh = new Vector2(0, 0);
     Vector2 bkTh = new Vector2(0, 0);
     int thSpeed = 100;
+    GameObject cam;
 
 
 
@@ -119,6 +120,8 @@ public class PlayerShipPrefab : MonoBehaviour
         body.transform.localScale = new Vector3(1, 1, 1);
         bodyRB = body.AddComponent<Rigidbody>();
 
+        cam = GameObject.FindGameObjectWithTag("MainCamera");
+        cam.transform.parent = body.transform;
 
 
 
