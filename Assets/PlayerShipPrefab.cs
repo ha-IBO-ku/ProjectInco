@@ -94,13 +94,14 @@ public class PlayerShipPrefab : MonoBehaviour
     public void OnForwardThruster(InputAction.CallbackContext context)
     {
         fwdTh = context.ReadValue<Vector2>();
-        //Debug.Log(fwdTh.ToString());      //0.0~1.0
+        Debug.Log("FWD=" + fwdTh.ToString());      //0.0~1.0
         //Debug.Log("ForThrust");
     }
 
     public void OnBackThruster(InputAction.CallbackContext context)
     {
         bkTh = context.ReadValue<Vector2>();
+        Debug.Log("BACK=" + bkTh.ToString());
         //Debug.Log("BackThrust");
     }
 
@@ -125,7 +126,7 @@ public class PlayerShipPrefab : MonoBehaviour
 
 
 
-        //本番コード
+        
         for (int i = 0; i < thrusters.Length; i++)
         {
             thrusters[i] = GameObject.CreatePrimitive(PrimitiveType.Cube);
@@ -199,19 +200,19 @@ public class PlayerShipPrefab : MonoBehaviour
         {
             if (bkTh.x < 0.0f)
             {
-
+                thrustRBs[7].AddRelativeForce(Vector3.back * -(bkTh.x) * thSpeed);
             }
             else
             {
-
+                thrustRBs[5].AddRelativeForce(Vector3.back * bkTh.x * thSpeed);
             }
             if (bkTh.y < 0.0f)
             {
-
+                thrustRBs[6].AddRelativeForce(Vector3.back * -(bkTh.y) * thSpeed);
             }
             else
             {
-
+                thrustRBs[4].AddRelativeForce(Vector3.back * bkTh.y * thSpeed);
             }
         }
     }
