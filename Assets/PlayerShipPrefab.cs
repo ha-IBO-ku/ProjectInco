@@ -10,11 +10,11 @@ public class PlayerShipPrefab : MonoBehaviour
 
     GameObject body;
     Rigidbody bodyRB;
-    GameObject[] thrusters = new GameObject[8];
-    Rigidbody[] thrustRBs = new Rigidbody[8];
-    FixedJoint[] thrustFJs = new FixedJoint[8];
+    GameObject[] thrusters = new GameObject[10];
+    Rigidbody[] thrustRBs = new Rigidbody[10];
+    FixedJoint[] thrustFJs = new FixedJoint[10];
     Vector3 thrusterScale = new Vector3(0.1f, 0.1f, 0.3f);
-    Vector3[] thDirVec = new Vector3[8]
+    Vector3[] thDirVec = new Vector3[10]
         {
         new Vector3(0f,1f,1f),
         new Vector3(1f,0f,1f),
@@ -23,9 +23,11 @@ public class PlayerShipPrefab : MonoBehaviour
         new Vector3(0f,1f,-1f),
         new Vector3(1f,0f,-1f),
         new Vector3(0f,-1f,-1f),
-        new Vector3(-1f,0f,-1f)
+        new Vector3(-1f,0f,-1f),
+        new Vector3(1f,0f,0f),
+        new Vector3(-1f,0f,0f)
         };
-    ThrustRotation[] thRot = new ThrustRotation[8]
+    ThrustRotation[] thRot = new ThrustRotation[10]
         {
         new ThrustRotation(45f,0f,0f),
         new ThrustRotation(0f,-45f,0f),
@@ -34,10 +36,13 @@ public class PlayerShipPrefab : MonoBehaviour
         new ThrustRotation(-45f,0f,0f),
         new ThrustRotation(0f,45f,0f),
         new ThrustRotation(45f,0f,0f),
-        new ThrustRotation(0f,-45f,0f)
+        new ThrustRotation(0f,-45f,0f),
+        new ThrustRotation(90f,0f,0f),
+        new ThrustRotation(90f,0f,0f)
         };
     float fwd4 = 0.0f;
     float back4 = 0.0f;
+    float side = 0.0f;
     Vector2 fwdTh = new Vector2(0, 0);
     Vector2 bkTh = new Vector2(0, 0);
     int thSpeed = 100;
@@ -62,7 +67,10 @@ public class PlayerShipPrefab : MonoBehaviour
 
 
 
-
+    public void OnSide(InputAction.CallbackContext context)
+    {
+        side = context.ReadValue<float>();
+    }
 
     public void OnFire(InputAction.CallbackContext context)
     {
