@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028355, g: 0.22571374, b: 0.30692255, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -487,6 +487,38 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: b6416d6e-75ff-4599-b6e1-6ace31744e7f
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 365012257928899647, guid: fd238d94a3b4d69449e4e320d03cc6ab, type: 3}
+        m_TargetAssemblyTypeName: PlayerShipPrefab, Assembly-CSharp
+        m_MethodName: OnCounterclockwaize
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: PlayerShipPrefab.OnCounterclockwize
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: adb1686a-b61c-4d7a-80da-1e9ba31f1e49
+    m_ActionName: Player/Counterclockwize[/XInputControllerWindows/rightTrigger]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 365012257928899647, guid: fd238d94a3b4d69449e4e320d03cc6ab, type: 3}
+        m_TargetAssemblyTypeName: PlayerShipPrefab, Assembly-CSharp
+        m_MethodName: OnClockwize
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: PlayerShipPrefab.OnClockwize
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: fc325481-2665-4cd0-a8e6-c042b17ad067
+    m_ActionName: Player/Clockwize[/XInputControllerWindows/leftTrigger]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
