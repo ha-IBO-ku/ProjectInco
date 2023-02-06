@@ -48,16 +48,25 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 },
                 {
-                    "name": "Side",
-                    "type": "Button",
+                    "name": "Counterclockwize",
+                    "type": "PassThrough",
                     "id": "adb1686a-b61c-4d7a-80da-1e9ba31f1e49",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "Axis",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Clockwize",
+                    "type": "PassThrough",
+                    "id": "fc325481-2665-4cd0-a8e6-c042b17ad067",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -217,44 +226,11 @@
                 },
                 {
                     "name": "",
-                    "id": "143bb1cd-cc10-4eca-a2f0-a3664166fe91",
-                    "path": "<Gamepad>/rightTrigger",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Gamepad",
-                    "action": "Forward4",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "05f6913d-c316-48b2-a6bb-e225f14c7960",
-                    "path": "<Mouse>/leftButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "Forward4",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "886e731e-7071-4ae4-95c0-e61739dad6fd",
                     "path": "<Touchscreen>/primaryTouch/tap",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Touch",
-                    "action": "Forward4",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "ee3d0cd2-254e-47a7-a8cb-bc94d9658c54",
-                    "path": "<Joystick>/trigger",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Joystick",
                     "action": "Forward4",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -272,12 +248,12 @@
                 },
                 {
                     "name": "",
-                    "id": "296f7d14-e7ff-4329-a8c6-d54ff5a7afd8",
-                    "path": "<Gamepad>/leftTrigger",
+                    "id": "3626f41c-13e5-4a62-84ed-be3bcb276de6",
+                    "path": "<Gamepad>/buttonNorth",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Gamepad",
-                    "action": "Back4",
+                    "groups": "",
+                    "action": "Forward4",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -295,11 +271,33 @@
                 {
                     "name": "",
                     "id": "be7e6034-bef9-4846-8442-0b858088873b",
-                    "path": "",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Counterclockwize",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "425c7f08-df76-401e-a691-524a84233a4e",
+                    "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Side",
+                    "action": "Back4",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3bcff7e7-dbd1-4327-a465-da305c2433b2",
+                    "path": "<Gamepad>/leftTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Clockwize",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

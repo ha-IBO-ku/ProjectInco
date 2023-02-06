@@ -42,7 +42,8 @@ public class PlayerShipPrefab : MonoBehaviour
         };
     float fwd4 = 0.0f;
     float back4 = 0.0f;
-    float side = 0.0f;
+    float cCwize = 0.0f;
+    float cwize = 0.0f;
     Vector2 fwdTh = new Vector2(0, 0);
     Vector2 bkTh = new Vector2(0, 0);
     int thSpeed = 100;
@@ -67,11 +68,14 @@ public class PlayerShipPrefab : MonoBehaviour
 
 
 
-    public void OnSide(InputAction.CallbackContext context)
+    public void OnCounterclockwaize(InputAction.CallbackContext context)
     {
-        side = context.ReadValue<float>();
+        cCwize = context.ReadValue<float>();
     }
-
+    public void OnClockwize(InputAction.CallbackContext context)
+    {
+        cwize = context.ReadValue<float>();
+    }
     public void OnFire(InputAction.CallbackContext context)
     {
         Debug.Log("Fire");
@@ -222,6 +226,16 @@ public class PlayerShipPrefab : MonoBehaviour
             {
                 thrustRBs[4].AddRelativeForce(Vector3.back * bkTh.y * thSpeed);
             }
+        }
+        if (cCwize != 0.0f)
+        {
+            thrustRBs[8].AddRelativeForce(Vector3.forward * cCwize * thSpeed / 2);
+            thrustRBs[9].AddRelativeForce(Vector3.back * cCwize * thSpeed / 2);
+        }
+        if (cwize != 0.0f)
+        {
+            thrustRBs[8].AddRelativeForce(Vector3.back * cwize * thSpeed / 2);
+            thrustRBs[9].AddRelativeForce(Vector3.forward * cwize * thSpeed / 2);
         }
     }
 }
