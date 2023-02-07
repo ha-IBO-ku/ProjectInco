@@ -68,13 +68,15 @@ public class PlayerShipPrefab : MonoBehaviour
 
 
 
-    public void OnCounterclockwaize(InputAction.CallbackContext context)
+    public void OnCounterclockwize(InputAction.CallbackContext context)
     {
         cCwize = context.ReadValue<float>();
+        Debug.Log("cCwize=" + cCwize.ToString());
     }
     public void OnClockwize(InputAction.CallbackContext context)
     {
         cwize = context.ReadValue<float>();
+        Debug.Log("cwize=" + cwize.ToString());
     }
     public void OnFire(InputAction.CallbackContext context)
     {
@@ -86,7 +88,7 @@ public class PlayerShipPrefab : MonoBehaviour
         //if (context.phase==InputActionPhase.Performed)
         //{
         fwd4 = context.ReadValue<float>();
-        Debug.Log(fwd4.ToString());     //0.0~1.0
+        //Debug.Log(fwd4.ToString());     //0.0~1.0
         //for (int i = 0; i < 4; i++)
         //{
         //    thrustRBs[i].AddRelativeForce(Vector3.forward * fwd4);
@@ -106,14 +108,14 @@ public class PlayerShipPrefab : MonoBehaviour
     public void OnForwardThruster(InputAction.CallbackContext context)
     {
         fwdTh = context.ReadValue<Vector2>();
-        Debug.Log("FWD=" + fwdTh.ToString());      //0.0~1.0
+        //Debug.Log("FWD=" + fwdTh.ToString());      //0.0~1.0
         //Debug.Log("ForThrust");
     }
 
     public void OnBackThruster(InputAction.CallbackContext context)
     {
         bkTh = context.ReadValue<Vector2>();
-        Debug.Log("BACK=" + bkTh.ToString());
+        //Debug.Log("BACK=" + bkTh.ToString());
         //Debug.Log("BackThrust");
     }
 
@@ -229,13 +231,13 @@ public class PlayerShipPrefab : MonoBehaviour
         }
         if (cCwize != 0.0f)
         {
-            thrustRBs[8].AddRelativeForce(Vector3.forward * cCwize * thSpeed / 2);
-            thrustRBs[9].AddRelativeForce(Vector3.back * cCwize * thSpeed / 2);
+            thrustRBs[8].AddRelativeForce(Vector3.forward * (cCwize * thSpeed / 2.0f));
+            thrustRBs[9].AddRelativeForce(Vector3.back * (cCwize * thSpeed / 2.0f));
         }
         if (cwize != 0.0f)
         {
-            thrustRBs[8].AddRelativeForce(Vector3.back * cwize * thSpeed / 2);
-            thrustRBs[9].AddRelativeForce(Vector3.forward * cwize * thSpeed / 2);
+            thrustRBs[8].AddRelativeForce(Vector3.back * (cwize * thSpeed / 2.0f));
+            thrustRBs[9].AddRelativeForce(Vector3.forward * (cwize * thSpeed / 2.0f));
         }
     }
 }
