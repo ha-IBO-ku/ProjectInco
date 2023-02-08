@@ -108,7 +108,7 @@ public class PlayerShipPrefab : MonoBehaviour
     public void OnForwardThruster(InputAction.CallbackContext context)
     {
         fwdTh = context.ReadValue<Vector2>();
-        //Debug.Log("FWD=" + fwdTh.ToString());      //0.0~1.0
+        Debug.Log("FWD=" + fwdTh.ToString());      //0.0~1.0
         //Debug.Log("ForThrust");
     }
 
