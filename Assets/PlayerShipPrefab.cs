@@ -108,7 +108,7 @@ public class PlayerShipPrefab : MonoBehaviour
     public void OnForwardThruster(InputAction.CallbackContext context)
     {
         fwdTh = context.ReadValue<Vector2>();
-        Debug.Log("FWD=" + fwdTh.ToString());      //0.0~1.0
+        //Debug.Log("FWD=" + fwdTh.ToString());      //0.0~1.0
         //Debug.Log("ForThrust");
     }
 
@@ -229,11 +229,17 @@ public class PlayerShipPrefab : MonoBehaviour
                 thrustRBs[4].AddRelativeForce(Vector3.back * bkTh.y * thSpeed);
             }
         }
-        if (cCwize != 0.0f)
-        {
+        //if (cCwize != 0.0f)
+        //{
+            //Debug.Log("before_cCwize=" + cCwize.ToString());
             thrustRBs[8].AddRelativeForce(Vector3.forward * (cCwize * thSpeed / 2.0f));
             thrustRBs[9].AddRelativeForce(Vector3.back * (cCwize * thSpeed / 2.0f));
-        }
+            //Debug.Log("after_cCwize="+ cCwize.ToString());
+            //Debug.Log((cCwize * thSpeed / 2.0f).ToString());
+            //Vector3 VecTest8 = new Vector3();
+            //VecTest8 = Vector3.forward * (cCwize * thSpeed / 2.0f);
+            //Debug.Log("thruster8=" + VecTest8.ToString());
+        //}
         if (cwize != 0.0f)
         {
             thrustRBs[8].AddRelativeForce(Vector3.back * (cwize * thSpeed / 2.0f));
