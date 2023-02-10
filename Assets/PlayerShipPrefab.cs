@@ -42,8 +42,8 @@ public class PlayerShipPrefab : MonoBehaviour
         };
     float fwd4 = 0.0f;
     float back4 = 0.0f;
-    float cCwize = 0.0f;
-    float cwize = 0.0f;
+    float cCwize;
+    float cwize;
     Vector2 fwdTh = new Vector2(0, 0);
     Vector2 bkTh = new Vector2(0, 0);
     int thSpeed = 100;
@@ -139,6 +139,9 @@ public class PlayerShipPrefab : MonoBehaviour
         cam.transform.parent = body.transform;
 
 
+        cCwize = 0.0f;
+        cwize = 0.0f;
+
 
         
         for (int i = 0; i < thrusters.Length; i++)
@@ -150,7 +153,7 @@ public class PlayerShipPrefab : MonoBehaviour
             thrustFJs[i] = ThrusterLocate(thrusters[i], thDirVec[i], thRot[i]);
         }
         //テストコード
-        //thrustRBs[0].AddRelativeForce(Vector3.forward * 200);
+        //thrustRBs[8].AddRelativeForce(Vector3.forward * 100);
         //thrustRBs[4].AddRelativeForce(Vector3.back * 200);
 
 
@@ -229,9 +232,9 @@ public class PlayerShipPrefab : MonoBehaviour
                 thrustRBs[4].AddRelativeForce(Vector3.back * bkTh.y * thSpeed);
             }
         }
-        //if (cCwize != 0.0f)
-        //{
-            //Debug.Log("before_cCwize=" + cCwize.ToString());
+        if (cCwize != 0.0f)
+        {
+            Debug.Log("before_cCwize=" + cCwize.ToString());
             thrustRBs[8].AddRelativeForce(Vector3.forward * (cCwize * thSpeed / 2.0f));
             thrustRBs[9].AddRelativeForce(Vector3.back * (cCwize * thSpeed / 2.0f));
             //Debug.Log("after_cCwize="+ cCwize.ToString());
@@ -239,7 +242,7 @@ public class PlayerShipPrefab : MonoBehaviour
             //Vector3 VecTest8 = new Vector3();
             //VecTest8 = Vector3.forward * (cCwize * thSpeed / 2.0f);
             //Debug.Log("thruster8=" + VecTest8.ToString());
-        //}
+        }
         if (cwize != 0.0f)
         {
             thrustRBs[8].AddRelativeForce(Vector3.back * (cwize * thSpeed / 2.0f));
