@@ -52,18 +52,18 @@
                 },
                 {
                     "name": "Counterclockwize",
-                    "type": "PassThrough",
+                    "type": "Button",
                     "id": "adb1686a-b61c-4d7a-80da-1e9ba31f1e49",
-                    "expectedControlType": "Axis",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
                 },
                 {
                     "name": "Clockwize",
-                    "type": "PassThrough",
+                    "type": "Button",
                     "id": "fc325481-2665-4cd0-a8e6-c042b17ad067",
-                    "expectedControlType": "Axis",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true

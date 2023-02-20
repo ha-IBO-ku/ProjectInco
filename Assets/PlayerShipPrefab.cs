@@ -70,13 +70,30 @@ public class PlayerShipPrefab : MonoBehaviour
 
     public void OnCounterclockwize(InputAction.CallbackContext context)
     {
-        cCwize = context.ReadValue<float>();
+        if (context.phase == InputActionPhase.Performed)
+        {
+            cCwize = 1;
+        }
+        //cCwize = context.ReadValue<float>();
         Debug.Log("cCwize=" + cCwize.ToString());
+        //if (cCwize != 0.0f)
+        //{
+            //thrustRBs[8].AddRelativeForce(Vector3.forward * (cCwize * thSpeed / 2.0f));
+            //thrustRBs[9].AddRelativeForce(Vector3.back * (cCwize * thSpeed / 2.0f));
+        //}
     }
     public void OnClockwize(InputAction.CallbackContext context)
     {
-        cwize = context.ReadValue<float>();
-        Debug.Log("cwize=" + cwize.ToString());
+        if (context.phase == InputActionPhase.Performed)
+        {
+            cwize = 1;
+        }
+        //Debug.Log("cwize=" + cwize.ToString());
+        //if (cwize != 0)
+        //{
+            //thrustRBs[8].AddRelativeForce(Vector3.back * (cwize * thSpeed / 2.0f));
+            //thrustRBs[9].AddRelativeForce(Vector3.forward * (cwize * thSpeed / 2.0f));
+        //}
     }
     public void OnFire(InputAction.CallbackContext context)
     {
@@ -175,7 +192,7 @@ public class PlayerShipPrefab : MonoBehaviour
     //{
     //
     //}
-    void FixedUpdate()
+    void FixesUpdate()
     {
         if (fwd4 != 0.0f)
         {
@@ -232,12 +249,13 @@ public class PlayerShipPrefab : MonoBehaviour
                 thrustRBs[4].AddRelativeForce(Vector3.back * bkTh.y * thSpeed);
             }
         }
+        Debug.Log("cCwize in FixedUpdate = " + cCwize.ToString());
         if (cCwize != 0.0f)
         {
             Debug.Log("before_cCwize=" + cCwize.ToString());
             thrustRBs[8].AddRelativeForce(Vector3.forward * (cCwize * thSpeed / 2.0f));
             thrustRBs[9].AddRelativeForce(Vector3.back * (cCwize * thSpeed / 2.0f));
-            //Debug.Log("after_cCwize="+ cCwize.ToString());
+            Debug.Log("after_cCwize="+ cCwize.ToString());
             //Debug.Log((cCwize * thSpeed / 2.0f).ToString());
             //Vector3 VecTest8 = new Vector3();
             //VecTest8 = Vector3.forward * (cCwize * thSpeed / 2.0f);
