@@ -70,11 +70,15 @@ public class PlayerShipPrefab : MonoBehaviour
 
     public void OnCounterclockwize(InputAction.CallbackContext context)
     {
-        if (context.phase == InputActionPhase.Performed)
-        {
-            cCwize = 1;
-        }
-        //cCwize = context.ReadValue<float>();
+        //if (context.phase == InputActionPhase.Performed)
+        //{
+            //cCwize = 1;
+        //}
+        //else
+        //{
+            //cCwize = 0;
+        //}
+        cCwize = context.ReadValue<float>();
         Debug.Log("cCwize=" + cCwize.ToString());
         //if (cCwize != 0.0f)
         //{
@@ -192,8 +196,19 @@ public class PlayerShipPrefab : MonoBehaviour
     //{
     //
     //}
-    void FixesUpdate()
+    void FixedUpdate()
     {
+        //if (cCwize != 0.0f)
+        //{
+            //Debug.Log("before_cCwize=" + cCwize.ToString());
+            //thrustRBs[8].AddRelativeForce(Vector3.forward * (cCwize * thSpeed / 2.0f));
+            //thrustRBs[9].AddRelativeForce(Vector3.back * (cCwize * thSpeed / 2.0f));
+            //Debug.Log("after_cCwize=" + cCwize.ToString());
+            //Debug.Log((cCwize * thSpeed / 2.0f).ToString());
+            //Vector3 VecTest8 = new Vector3();
+            //VecTest8 = Vector3.forward * (cCwize * thSpeed / 2.0f);
+            //Debug.Log("thruster8=" + VecTest8.ToString());
+        //}
         if (fwd4 != 0.0f)
         {
             for (int i = 0; i < 4; i++)
@@ -250,17 +265,17 @@ public class PlayerShipPrefab : MonoBehaviour
             }
         }
         Debug.Log("cCwize in FixedUpdate = " + cCwize.ToString());
-        if (cCwize != 0.0f)
-        {
-            Debug.Log("before_cCwize=" + cCwize.ToString());
-            thrustRBs[8].AddRelativeForce(Vector3.forward * (cCwize * thSpeed / 2.0f));
-            thrustRBs[9].AddRelativeForce(Vector3.back * (cCwize * thSpeed / 2.0f));
-            Debug.Log("after_cCwize="+ cCwize.ToString());
+        //if (cCwize != 0.0f)
+        //{
+            //Debug.Log("before_cCwize=" + cCwize.ToString());
+            //thrustRBs[8].AddRelativeForce(Vector3.forward * (cCwize * thSpeed / 2.0f));
+            //thrustRBs[9].AddRelativeForce(Vector3.back * (cCwize * thSpeed / 2.0f));
+            //Debug.Log("after_cCwize="+ cCwize.ToString());
             //Debug.Log((cCwize * thSpeed / 2.0f).ToString());
             //Vector3 VecTest8 = new Vector3();
             //VecTest8 = Vector3.forward * (cCwize * thSpeed / 2.0f);
             //Debug.Log("thruster8=" + VecTest8.ToString());
-        }
+        //}
         if (cwize != 0.0f)
         {
             thrustRBs[8].AddRelativeForce(Vector3.back * (cwize * thSpeed / 2.0f));
