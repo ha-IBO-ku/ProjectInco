@@ -42,13 +42,15 @@ public class PlayerShipPrefab : MonoBehaviour
         };
     float fwd4 = 0.0f;
     float back4 = 0.0f;
-    float cCwize;
-    float cwize;
+    //float cCwize;
+    //float cwize;
     Vector2 fwdTh = new Vector2(0, 0);
     Vector2 bkTh = new Vector2(0, 0);
     int thSpeed = 100;
     GameObject cam;
-
+    int flame = 0;
+    float cCwize = 0;
+    float cwize = 0;
 
 
     struct ThrustRotation
@@ -79,7 +81,7 @@ public class PlayerShipPrefab : MonoBehaviour
             //cCwize = 0;
         //}
         cCwize = context.ReadValue<float>();
-        Debug.Log("cCwize=" + cCwize.ToString());
+        Debug.Log("cCwize=" + cCwize.ToString() + "::" + flame.ToString());
         //if (cCwize != 0.0f)
         //{
             //thrustRBs[8].AddRelativeForce(Vector3.forward * (cCwize * thSpeed / 2.0f));
@@ -88,10 +90,11 @@ public class PlayerShipPrefab : MonoBehaviour
     }
     public void OnClockwize(InputAction.CallbackContext context)
     {
-        if (context.phase == InputActionPhase.Performed)
-        {
-            cwize = 1;
-        }
+        //if (context.phase == InputActionPhase.Performed)
+        //{
+        //cwize = 1;
+        //}
+        cwize = context.ReadValue<float>();
         //Debug.Log("cwize=" + cwize.ToString());
         //if (cwize != 0)
         //{
@@ -160,8 +163,8 @@ public class PlayerShipPrefab : MonoBehaviour
         cam.transform.parent = body.transform;
 
 
-        cCwize = 0.0f;
-        cwize = 0.0f;
+        //cCwize = 0.0f;
+        //cwize = 0.0f;
 
 
         
@@ -264,7 +267,7 @@ public class PlayerShipPrefab : MonoBehaviour
                 thrustRBs[4].AddRelativeForce(Vector3.back * bkTh.y * thSpeed);
             }
         }
-        Debug.Log("cCwize in FixedUpdate = " + cCwize.ToString());
+        Debug.Log("cCwize in FixedUpdate = " + cCwize.ToString() + "::" + flame.ToString());
         //if (cCwize != 0.0f)
         //{
             //Debug.Log("before_cCwize=" + cCwize.ToString());
@@ -277,9 +280,11 @@ public class PlayerShipPrefab : MonoBehaviour
             //Debug.Log("thruster8=" + VecTest8.ToString());
         //}
         if (cwize != 0.0f)
+        
         {
             thrustRBs[8].AddRelativeForce(Vector3.back * (cwize * thSpeed / 2.0f));
             thrustRBs[9].AddRelativeForce(Vector3.forward * (cwize * thSpeed / 2.0f));
         }
+        flame++;
     }
 }
