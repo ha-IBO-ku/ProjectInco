@@ -42,15 +42,15 @@ public class PlayerShipPrefab : MonoBehaviour
         };
     float fwd4 = 0.0f;
     float back4 = 0.0f;
-    //float cCwize;
-    //float cwize;
+    //float hTcCwize;
+    //float hTcwize;
     Vector2 fwdTh = new Vector2(0, 0);
     Vector2 bkTh = new Vector2(0, 0);
     int thSpeed = 100;
     GameObject cam;
     int flame = 0;
-    float cCwize = 0;
-    float cwize = 0;
+    float hTcCwize = 0.0f;
+    float hTcwize = 0.0f;
 
 
     struct ThrustRotation
@@ -74,33 +74,33 @@ public class PlayerShipPrefab : MonoBehaviour
     {
         //if (context.phase == InputActionPhase.Performed)
         //{
-            //cCwize = 1;
+            //hTcCwize = 1;
         //}
         //else
         //{
-            //cCwize = 0;
+            //hTcCwize = 0;
         //}
-        cCwize = context.ReadValue<float>();
-        Debug.Log("cCwize=" + cCwize.ToString() + "::" + flame.ToString());
-        //if (cCwize != 0.0f)
+        hTcCwize = context.ReadValue<float>();
+        Debug.Log("hTcCwize=" + hTcCwize.ToString() + "::" + flame.ToString());
+        //if (hTcCwize != 0.0f)
         //{
-            //thrustRBs[8].AddRelativeForce(Vector3.forward * (cCwize * thSpeed / 2.0f));
-            //thrustRBs[9].AddRelativeForce(Vector3.back * (cCwize * thSpeed / 2.0f));
+            //thrustRBs[8].AddRelativeForce(Vector3.forward * (hTcCwize * thSpeed / 2.0f));
+            //thrustRBs[9].AddRelativeForce(Vector3.back * (hTcCwize * thSpeed / 2.0f));
         //}
     }
     public void OnClockwize(InputAction.CallbackContext context)
     {
         //if (context.phase == InputActionPhase.Performed)
         //{
-        //cwize = 1;
+        //hTcwize = 1;
         //}
-        cwize = context.ReadValue<float>();
-        //Debug.Log("cwize=" + cwize.ToString());
-        //if (cwize != 0)
-        //{
-            //thrustRBs[8].AddRelativeForce(Vector3.back * (cwize * thSpeed / 2.0f));
-            //thrustRBs[9].AddRelativeForce(Vector3.forward * (cwize * thSpeed / 2.0f));
-        //}
+        this.hTcwize = context.ReadValue<float>();
+        Debug.Log("hTcwize=" + hTcwize.ToString());
+        /*if (hTcwize != 0)
+        {
+            thrustRBs[8].AddRelativeForce(Vector3.back * (hTcwize * thSpeed / 2.0f));
+            thrustRBs[9].AddRelativeForce(Vector3.forward * (hTcwize * thSpeed / 2.0f));
+        }*/
     }
     public void OnFire(InputAction.CallbackContext context)
     {
@@ -150,8 +150,8 @@ public class PlayerShipPrefab : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       
 
+        Debug.Log("Start.");
         Physics.gravity = new Vector3(0, 0, 0);
 
         body = GameObject.CreatePrimitive(PrimitiveType.Sphere);
@@ -163,8 +163,8 @@ public class PlayerShipPrefab : MonoBehaviour
         cam.transform.parent = body.transform;
 
 
-        //cCwize = 0.0f;
-        //cwize = 0.0f;
+        //hTcCwize = 0.0f;
+        //hTcwize = 0.0f;
 
 
         
@@ -201,15 +201,15 @@ public class PlayerShipPrefab : MonoBehaviour
     //}
     void FixedUpdate()
     {
-        //if (cCwize != 0.0f)
+        //if (hTcCwize != 0.0f)
         //{
-            //Debug.Log("before_cCwize=" + cCwize.ToString());
-            //thrustRBs[8].AddRelativeForce(Vector3.forward * (cCwize * thSpeed / 2.0f));
-            //thrustRBs[9].AddRelativeForce(Vector3.back * (cCwize * thSpeed / 2.0f));
-            //Debug.Log("after_cCwize=" + cCwize.ToString());
-            //Debug.Log((cCwize * thSpeed / 2.0f).ToString());
+            //Debug.Log("before_cCwize=" + hTcCwize.ToString());
+            //thrustRBs[8].AddRelativeForce(Vector3.forward * (hTcCwize * thSpeed / 2.0f));
+            //thrustRBs[9].AddRelativeForce(Vector3.back * (hTcCwize * thSpeed / 2.0f));
+            //Debug.Log("after_cCwize=" + hTcCwize.ToString());
+            //Debug.Log((hTcCwize * thSpeed / 2.0f).ToString());
             //Vector3 VecTest8 = new Vector3();
-            //VecTest8 = Vector3.forward * (cCwize * thSpeed / 2.0f);
+            //VecTest8 = Vector3.forward * (hTcCwize * thSpeed / 2.0f);
             //Debug.Log("thruster8=" + VecTest8.ToString());
         //}
         if (fwd4 != 0.0f)
@@ -267,24 +267,26 @@ public class PlayerShipPrefab : MonoBehaviour
                 thrustRBs[4].AddRelativeForce(Vector3.back * bkTh.y * thSpeed);
             }
         }
-        Debug.Log("cCwize in FixedUpdate = " + cCwize.ToString() + "::" + flame.ToString());
-        //if (cCwize != 0.0f)
+        //Debug.Log("hTcCwize in FixedUpdate = " + hTcCwize.ToString() + "::" + flame.ToString());
+        //if (hTcCwize != 0.0f)
         //{
-            //Debug.Log("before_cCwize=" + cCwize.ToString());
-            //thrustRBs[8].AddRelativeForce(Vector3.forward * (cCwize * thSpeed / 2.0f));
-            //thrustRBs[9].AddRelativeForce(Vector3.back * (cCwize * thSpeed / 2.0f));
-            //Debug.Log("after_cCwize="+ cCwize.ToString());
-            //Debug.Log((cCwize * thSpeed / 2.0f).ToString());
+            //Debug.Log("before_cCwize=" + hTcCwize.ToString());
+            //thrustRBs[8].AddRelativeForce(Vector3.forward * (hTcCwize * thSpeed / 2.0f));
+            //thrustRBs[9].AddRelativeForce(Vector3.back * (hTcCwize * thSpeed / 2.0f));
+            //Debug.Log("after_cCwize="+ hTcCwize.ToString());
+            //Debug.Log((hTcCwize * thSpeed / 2.0f).ToString());
             //Vector3 VecTest8 = new Vector3();
-            //VecTest8 = Vector3.forward * (cCwize * thSpeed / 2.0f);
+            //VecTest8 = Vector3.forward * (hTcCwize * thSpeed / 2.0f);
             //Debug.Log("thruster8=" + VecTest8.ToString());
         //}
-        if (cwize != 0.0f)
+        if (this.hTcwize != 0.0f)
         
         {
-            thrustRBs[8].AddRelativeForce(Vector3.back * (cwize * thSpeed / 2.0f));
-            thrustRBs[9].AddRelativeForce(Vector3.forward * (cwize * thSpeed / 2.0f));
+            Debug.Log("add force!");
+            thrustRBs[8].AddRelativeForce(Vector3.back * (hTcwize * thSpeed / 2.0f));
+            thrustRBs[9].AddRelativeForce(Vector3.forward * (hTcwize * thSpeed / 2.0f));
         }
+
         flame++;
     }
 }
