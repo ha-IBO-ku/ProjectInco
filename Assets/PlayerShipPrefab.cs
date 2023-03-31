@@ -228,6 +228,9 @@ public class PlayerShipPrefab : MonoBehaviour
         bk4 = Input.GetAxis("back4");
 
 
+        Debug.Log("fwdVer = " + fwdThVer.ToString());
+
+
         if (fwd4 >= 0.0f)
         {
             for (int i = 0; i < 4; i++)
