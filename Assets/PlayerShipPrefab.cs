@@ -51,13 +51,13 @@ public class PlayerShipPrefab : MonoBehaviour
     int flame = 0;
     //float cCwize = 0;
     //float cwize = 0;
-    float fwdThHori = 0;
-    float fwdThVer = 0;
-    float bkThHori = 0;
-    float bkThVer = 0;
-    float cwize = 0;
-    float fwd4 = 0;
-    float bk4 = 0;
+    float fwdThHori = 0.0f;
+    float fwdThVer = 0.0f;
+    float bkThHori = 0.0f;
+    float bkThVer = 0.0f;
+    float cwize = 0.0f;
+    float fwd4 = 0.0f;
+    float bk4 = 0.0f;
 
     struct ThrustRotation
     {
@@ -228,7 +228,7 @@ public class PlayerShipPrefab : MonoBehaviour
         bk4 = Input.GetAxis("back4");
 
 
-        Debug.Log("fwdVer = " + fwdThVer.ToString());
+        Debug.Log("fwdHori = " + fwdThHori.ToString());
 
 
         if (fwd4 >= 0.0f)
