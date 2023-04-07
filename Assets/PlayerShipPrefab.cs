@@ -228,7 +228,7 @@ public class PlayerShipPrefab : MonoBehaviour
         bk4 = Input.GetAxis("back4");
 
 
-        Debug.Log("fwdHori = " + fwdThHori.ToString());
+        //Debug.Log("fwdThHori = " + fwdThHori.ToString());
 
 
         if (fwd4 >= 0.0f)
@@ -278,7 +278,9 @@ public class PlayerShipPrefab : MonoBehaviour
             {
                 thrustRBs[1].AddRelativeForce(Vector3.forward * fwdThHori * thSpeed);
             }
+            Debug.Log("fwdThHori = " + fwdThHori.ToString());
         }
+        
         if (fwdThVer != 0.0f)
         {        
             if (fwdThVer < 0.0f)
@@ -289,6 +291,7 @@ public class PlayerShipPrefab : MonoBehaviour
             {
             thrustRBs[0].AddRelativeForce(Vector3.forward * fwdThVer * thSpeed);
             }
+            Debug.Log("fwdThVer = " + fwdThVer.ToString());
         }
 
         if (bkThHori != 0.0f)
@@ -301,6 +304,7 @@ public class PlayerShipPrefab : MonoBehaviour
             {
                 thrustRBs[5].AddRelativeForce(Vector3.back * bkThHori * thSpeed);
             }
+            Debug.Log("bkThHori = " + bkThHori.ToString());
         }
         if (bkThVer != 0.0f)
         {
@@ -312,6 +316,7 @@ public class PlayerShipPrefab : MonoBehaviour
             {
                 thrustRBs[4].AddRelativeForce(Vector3.back * bkThVer * thSpeed);
             }
+            Debug.Log("bkThVer = " + bkThVer.ToString());
         }
         //Debug.Log("cCwize in FixedUpdate = " + cCwize.ToString() + "::" + flame.ToString());
         if (cwize != 0.0f)

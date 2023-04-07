@@ -14,13 +14,13 @@ InputManager:
     altNegativeButton: 
     altPositiveButton: 
     gravity: 1000
-    dead: 0.05
+    dead: 0.1
     sensitivity: 1000
     snap: 0
     invert: 0
     type: 2
     axis: 3
-    joyNum: 0
+    joyNum: 1
   - serializedVersion: 3
     m_Name: forwardThVer
     descriptiveName: 
@@ -30,13 +30,13 @@ InputManager:
     altNegativeButton: 
     altPositiveButton: 
     gravity: 1000
-    dead: 0.05
+    dead: 0.1
     sensitivity: 1000
     snap: 0
     invert: 0
     type: 2
     axis: 4
-    joyNum: 0
+    joyNum: 1
   - serializedVersion: 3
     m_Name: backThHori
     descriptiveName: 
@@ -46,13 +46,13 @@ InputManager:
     altNegativeButton: 
     altPositiveButton: 
     gravity: 1000
-    dead: 0.05
+    dead: 0.1
     sensitivity: 1000
     snap: 0
     invert: 0
     type: 2
     axis: 0
-    joyNum: 0
+    joyNum: 1
   - serializedVersion: 3
     m_Name: backThVer
     descriptiveName: 
@@ -62,13 +62,13 @@ InputManager:
     altNegativeButton: 
     altPositiveButton: 
     gravity: 1000
-    dead: 0.05
+    dead: 0.1
     sensitivity: 1000
     snap: 0
     invert: 0
     type: 2
     axis: 1
-    joyNum: 0
+    joyNum: 1
   - serializedVersion: 3
     m_Name: clockwize
     descriptiveName: 
@@ -84,7 +84,7 @@ InputManager:
     invert: 0
     type: 2
     axis: 2
-    joyNum: 0
+    joyNum: 1
   - serializedVersion: 3
     m_Name: forward4
     descriptiveName: 
@@ -100,7 +100,7 @@ InputManager:
     invert: 0
     type: 0
     axis: 27
-    joyNum: 0
+    joyNum: 1
   - serializedVersion: 3
     m_Name: back4
     descriptiveName: 
@@ -116,5 +116,5 @@ InputManager:
     invert: 0
     type: 0
     axis: 27
-    joyNum: 0
+    joyNum: 1
   m_UsePhysicalKeys: 0
